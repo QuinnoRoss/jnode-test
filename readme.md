@@ -1,7 +1,5 @@
 # NODE JS
 
-
-
 # Open Hello World in server 
 
 ## Installation
@@ -16,40 +14,57 @@ Enter commands
 * `node HelloWorld.js`
 
 
-## Open Hello world directly from the terminal
+# Open Hello World in server 
 
-* Go back to "HelloWorld.js"
-* Comment out all of the codes and just type `console.log(`Hello World`);`
-* Go back to terminal
-* Click ctrl+c
-* Type `node HelloWorld.js`
+## Installation
 
-## Typing webdriver from google 
+Enter commands
+* ``` mkdir %NAME% ```
+* ```npm init ```
 
-* Go back to the terminal
-* Enter the command `subl .`
-* Make a new file and name it `%NAME%.js`
-* Open your browser
-* Go to https://www.npmjs.com/package/selenium-webdriver 
-* Copy the code under "usage" and paste it to your `%NAME%.js`
-* Remove the " ; " in line 7 of your code after ` await driver.findElement(By.name('q')) `
-* Save your code
-* Go back to the terminal
-* Enter the command `npm install selenium-webdriver`
-* Enter the command `npm install geckodriver`
-* Enter the command  `subl .`
-* Open your "package.json" file
-* Save your "package.json" file
-* Go back to the terminal
-* Enter the command `npm start`
+## Code
+* `console.log(`Hello World`);`
 
-## Locating text in the website
-  - Open Terminal
-  - Enter the command `mkdir %NAME%`
-  - Enter the newly made directory by entering the command `%NAME%` 
-  - Enter the command `subl .` to open sublime editor
-  - Make a new file 
-  - Copy the code 
+## Run the code
+* `node %NAME%.js`
+
+
+# Typing webdriver from google 
+
+## Installation
+
+Enter commands
+* ``` mkdir %NAME% ```
+* ```npm init ```
+* `npm install selenium-webdriver`
+* `npm install geckodriver`
+
+## Code
+```const {Builder, By, Key, until} = require('selenium-webdriver');
+
+(async function example() {
+  let driver = await new Builder().forBrowser('firefox').build();
+  try {
+    await driver.get('http://www.google.com/ncr');
+    await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+  } finally {
+    await driver.quit();
+  }
+})();
+```
+## Run the code
+* `node %NAME%.js`
+
+        
+# Locating text in the website
+Enter commands
+* ``` mkdir %NAME% ```
+* ```npm init ```
+* `npm install selenium-webdriver`
+* `npm install geckodriver`
+### Code
+
 ```
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
@@ -76,20 +91,22 @@ driver.findElement(By.xpath("//*[contains(text(), '> ₱ 2,000,000 ')]")).getTex
 	console.log(txt3);
 });
 ```
-  - Paste the code inside the newly made file
-  - Save the code and name it `%NAME%.js`
-  - Go back to terminal
-  - Click `ctrl + c`
-  - Enter the command `node %NAME%.js`
-   
+  ### Command
+
+  - `node %NAME%.js`
  
- ## Activity
+ 
+ # Asserting values per page (Activity)
 
-* Go back to the terminal
-* Enter the command `subl .`
-* Make a new file and name it `%NAME%.js`
-* Copy the code below
+## Installation
 
+Enter commands
+* ``` mkdir %NAME% ```
+* ```npm init ```
+* `npm install selenium-webdriver`
+* `npm install geckodriver`
+
+## Code
 ```
 const { Builder, By, Key, until } = require("selenium-webdriver")
 let driver = new Builder().forBrowser("firefox").build()
@@ -316,9 +333,8 @@ async function main() {
 } // MAIN
 
 main()
-
-
 ```
-* Paste the code and save the file
-* Go back to terminal
-* Run the command `node %NAME%.js`
+## Run the code
+* `node %NAME%.js`
+
+        
